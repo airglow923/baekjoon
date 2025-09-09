@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+template <typename A, typename B>
+auto
+operator<<(ostream &os, const pair<A, B> &p) -> ostream & {
+  return os << '(' << p.first << ", " << p.second << ')';
+}
+template <typename T_container, typename T = typename enable_if<
+                                    !is_same<T_container, string>::value,
+                                    typename T_container::value_type>::type>
+auto
+operator<<(ostream &os, const T_container &v) -> ostream & {
+  os << '{';
+  string sep;
+  for (const T &x : v)
+    os << sep << x, sep = ", ";
+  return os << '}';
+}
+
+auto
+dbg_out() -> void {
+  cerr << endl;
+}
+
+template <typename Head, typename... Tail>
+auto
+dbg_out(Head H, Tail... T) -> void {
+  cerr << ' ' << H;
+  dbg_out(T...);
+}
+
+#ifdef LOCAL
+#define dbg(...) cerr << "(" << #__VA_ARGS__ << "):", dbg_out(__VA_ARGS__)
+#else
+#define dbg(...)
+#endif
+
+#define ar array
+#define ll long long
+#define ld long double
+#define sza(x) ((int)x.size())
+#define all(a) (a).begin(), (a).end()
+
+const int MAX_N = 1e5 + 5;
+const ll MOD = 1e9 + 7;
+const ll INF = 1e9;
+const ld EPS = 1e-9;
+
+auto
+solve() -> void {
+  const auto BUDDHA_YEAR = 2541 - 1998;
+  int year;
+
+  cin >> year;
+
+  cout << year - BUDDHA_YEAR;
+}
+
+auto
+main() -> int {
+  solve();
+}
